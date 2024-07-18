@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accounts List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+</head>
+<body>
+    <h1>Accounts List</h1>
+    <ul>
+        {% for account in accounts %}
+        <li>
+            <a href="{% url 'account_detail' account.account_id %}">{{ account.name }}</a> - Balance: {{ account.balance }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'transfer_funds' %}">Transfer Funds</a>
+</body>
+</html>

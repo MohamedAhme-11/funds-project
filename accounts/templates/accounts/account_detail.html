@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Details</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+</head>
+<body>
+    <h1>Account Details for {{ account.name }}</h1>
+    <p>ID: {{ account.account_id }}</p>
+    <p>Balance: {{ account.balance }}</p>
+    <a href="{% url 'list_accounts' %}">Back to Accounts List</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer Funds</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+</head>
+<body>
+    <h1>Transfer Funds</h1>
+    <form method="post" action="{% url 'transfer_funds' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Transfer</button>
+    </form>
+    <a href="{% url 'list_accounts' %}">Back to Accounts List</a>
+</body>
+</html>
